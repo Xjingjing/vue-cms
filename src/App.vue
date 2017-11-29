@@ -43,7 +43,6 @@ export default {};
   .container{
     margin-top: 40px;
     margin-bottom: 50px;
-    height: 100%;
   }
   .zong{
     height: 100%;

@@ -5,10 +5,15 @@ import Vue from "vue"
 //使用Vue.use方法加载VueRouter模块
 Vue.use(VueRouter)
 
+// 导航
 import HomeContainer from "../components/tabcontainer/HomeContainer.vue"
 import MemberContainer from "../components/tabcontainer/MemberContainer.vue"
 import CartContainer from "../components/tabcontainer/CartContainer.vue"
 import SearchContainer from "../components/tabcontainer/SearchContainer.vue"
+
+// 新闻
+import newslist from "../components/news/newslist.vue"
+import newsinfo from "../components/news/newsinfo.vue"
 
 export default new VueRouter({
     routes: [
@@ -31,6 +36,14 @@ export default new VueRouter({
         {
             path:'/',
             redirect:'/home'
+        },
+        {
+            path:'/home/newslist',
+            component:newslist
+        },
+        {
+            path:"/home/newsinfo/:id",
+            component:newsinfo
         }
     ]
 });
