@@ -1,5 +1,5 @@
 {
-  "name": "vue-template",
+  "name": "cms",
   "version": "1.0.0",
   "scripts": {
     "dev": "webpack-dev-server",
@@ -26,5 +26,8 @@
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {
+    "mint-ui": "^2.2.11"
   }
 }
