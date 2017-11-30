@@ -15,6 +15,13 @@ import SearchContainer from "../components/tabcontainer/SearchContainer.vue"
 import newslist from "../components/news/newslist.vue"
 import newsinfo from "../components/news/newsinfo.vue"
 
+//图片分享
+import picList from "../components/pic/picList.vue"
+import picInfo from "../components/pic/picInfo.vue" 
+
+//商品购买
+import goodsList from "../components/goods/goodslist.vue"
+import goodsInfo from "../components/goods/goodsinfo.vue"
 export default new VueRouter({
     routes: [
         {
@@ -44,6 +51,22 @@ export default new VueRouter({
         {
             path:"/home/newsinfo/:id",
             component:newsinfo
+        },
+        {
+            path:"/home/piclist/:id?",
+            component:picList
+        },
+        {
+            path:"/home/picinfo/:id",
+            component:picInfo
+        },
+        {
+            path:"/home/goodslist",
+            component:goodsList
+        },
+        {
+            path:"/home/goodsinfo/:id",
+            component:goodsInfo
         }
     ]
 });

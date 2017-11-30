@@ -1,17 +1,10 @@
 <template>
   <div class="container">
-     <div class="news-head">
-       <h4>{{newsinfo.title}}</h4>
-       <p class='mui-ellipsis news-time '>
-          <span>发布时间: {{newsinfo.add_time | dateformatter("YYYY-MM-DD HH:mm:ss")}}</span>
-          <span class="mui-pull-right">点击：{{newsinfo.click}}次</span>
-        </p>
-     </div>
-     <div class="news-content" v-html="newsinfo.content"> 
+     <detail :newsinfo="newsinfo">
 
-     </div>
+     </detail>
      <div class="comment">
-       <comment id="$route.params.id"></comment>
+       <comment :id="$route.params.id"></comment>
      </div>
   </div>
 </template>
@@ -19,7 +12,8 @@
 <script>
 import dateformatter from "../../filters/dateformatter.js"
 import axios from "axios"
-import comment from "../comment/comment.vue"
+import comment from "../common/comment.vue"
+import detail from "../common/datail.vue"
 export default {
   data(){
     return {
@@ -30,14 +24,15 @@ export default {
     dateformatter
   },
   components:{
-    comment
+    comment,
+    detail
   },
   created(){
     axios({
       url:"http://vue.studyit.io/api/getnew/"+this.$route.params.id
     }).then(res => {
       if(res.data.status == 0){
-        console.log(res);
+        // console.log(res);
         this.newsinfo = res.data.message[0];
       }
     })

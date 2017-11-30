@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "mint-ui": "^2.2.11",
-    "mui": "^0.0.1"
+    "mui": "^0.0.1",
+    "vue-preview": "^1.0.5"
   }
 }
